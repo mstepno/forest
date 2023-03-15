@@ -1,4 +1,10 @@
-<?php define('ENTER',true)  ?> 
+<?php define('ENTER', true) ?>
+<?php session_start() ?>
+<?php if (!isset($_SESSION['logged']) || $_SESSION['logged'] != 1) {
+    header('Location: http://localhost/ciupakabros/015/login/');
+    die;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +14,7 @@
     <title>Forest for Members</title>
 </head>
 <body>
-     <?php require __DIR__ . '/../menu.php' ?>
-     <h1>Welcome to the DARK and DEEP FOREST</h1>
-    
+    <?php require __DIR__ . '/../menu.php' ?>
+    <h1 style="color: crimson;">Welcome to the DARK and DEEP FOREST</h1>
 </body>
 </html>
